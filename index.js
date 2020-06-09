@@ -2,7 +2,6 @@ $(function() {
     $('#js-shopping-list-form').submit(function(event){
       event.preventDefault();
       var textInput = $('#shopping-list-entry').val();
-      console.log(textInput)
   
       $('.shopping-list').append(
         `<li>
@@ -22,8 +21,8 @@ $(function() {
     });
   
     $('.shopping-list').on('click', '.shopping-item-toggle', 
-    e => {
-      $(e.currentTarget)
+    function(e){
+      $(this)
         .closest('li').find('.shopping-item').toggleClass('shopping-item__checked')
     });
   
